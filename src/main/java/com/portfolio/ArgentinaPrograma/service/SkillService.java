@@ -38,6 +38,7 @@ public class SkillService implements ISkillService{
         skillRepository.deleteById(id);
     }
     
+     @Override
      public void edit(Skill ski){
         skillRepository.save(ski);
     }

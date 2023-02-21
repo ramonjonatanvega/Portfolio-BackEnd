@@ -33,6 +33,11 @@ public class ProyectoService implements IProyectoService{
     public void delete(Integer id) {
         proyecRepository.deleteById(id);
     }
+    
+    @Override
+       public void edit(Proyecto proye){
+        proyecRepository.save(proye);
+    }
 
     @Override //traer el proyecto
     public Proyecto findProyecto(Integer id) {

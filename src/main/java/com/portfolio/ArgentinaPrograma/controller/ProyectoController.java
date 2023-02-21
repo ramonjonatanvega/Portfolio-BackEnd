@@ -53,6 +53,11 @@ public class ProyectoController {
         interProyec.saveProyecto(proyec);   
     }
     
+    @PutMapping("/update")
+    public void edit(@RequestBody Proyecto proye) {
+        interProyec.edit(proye);
+    }
+    
     //Metodo para borrar por id
     @DeleteMapping("/borrar/{id}")
     public void delete(@PathVariable ("id") Integer id){

@@ -4,6 +4,7 @@ package com.portfolio.ArgentinaPrograma.service;
 import com.portfolio.ArgentinaPrograma.model.Experiencia;
 import com.portfolio.ArgentinaPrograma.repository.IExperiencia;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,6 +36,11 @@ public class ExperienciaService implements IExperienciaService{
         public void delete(Integer id) {
        expRepository.deleteById(id);
     }
+        
+    @Override
+         public void edit(Experiencia expe){
+        expRepository.save(expe);
+    }
 
     @Override //traer la experiencia
     public Experiencia findExperiencia(Integer id) {
@@ -48,6 +54,10 @@ public class ExperienciaService implements IExperienciaService{
         return expRepository.findByPersonaId(personaId);
     }
     
-  
-  
+   
+    @Override
+      public Optional<Experiencia> gettwo(int id){
+         return expRepository.findById(id);
+     }
+     
 }

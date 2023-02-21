@@ -17,7 +17,8 @@ public class Educacion {
     
     @Id
    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    //fdgfgdg
+    
+    
     private Integer id;
     private String nombreInstitucion;
     private String logoInstitucion;

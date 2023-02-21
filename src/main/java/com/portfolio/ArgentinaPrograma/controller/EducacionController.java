@@ -52,6 +52,13 @@ public class EducacionController {
         interEdu.saveEducacion(edu);
     }
     
+    
+    
+    @PutMapping("/update")
+    public void edit(@RequestBody Educacion edu) {      
+        interEdu.edit(edu);
+    }
+    
     //borrar educacion por id
     @DeleteMapping("/borrar/{id}")
     public void delete(@PathVariable ("id") Integer id){

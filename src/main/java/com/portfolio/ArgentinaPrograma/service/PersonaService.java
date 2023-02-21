@@ -52,5 +52,6 @@ public class PersonaService implements IPersonaService{
         PersonaDTO personaDTO= new PersonaDTO (perso.getId(),perso.getNombre(),perso.getApellido(),perso.getBanner(), perso.getFoto_perfil(),perso.getTitulo(), perso.getUbicacion(), perso.getAcerca_de());
          return personaDTO;
      }
-                                                                                                                                           
+      
+     
 }

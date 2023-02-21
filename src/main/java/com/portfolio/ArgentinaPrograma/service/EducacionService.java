@@ -34,6 +34,11 @@ public class EducacionService implements IEducacionService{
     public void delete(Integer id) {
        eduRepository.deleteById(id);
     }
+    
+     @Override
+     public void edit(Educacion edu){
+        eduRepository.save(edu);
+    }
 
     @Override //traer la educacion
     public Educacion findEducacion(Integer id) {

@@ -17,7 +17,7 @@ public class Experiencia {
    
      @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
-   //hfhf
+   
      private Integer id;
     private String nombreEmpresa;
     private String logoEmpresa;
@@ -45,6 +45,8 @@ public class Experiencia {
         this.esTrabajoActual = esTrabajoActual;
         this.personaId = personaId;
     }
+
+   
 
  
     

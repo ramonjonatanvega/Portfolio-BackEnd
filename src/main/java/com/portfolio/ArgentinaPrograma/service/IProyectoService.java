@@ -12,4 +12,5 @@ public interface IProyectoService {
     public Proyecto findProyecto(Integer id);
     public List<Proyecto> findByPersonaId(Long personaId);
     public Proyecto getOne(int id);
+    public void edit(Proyecto proye);
 }

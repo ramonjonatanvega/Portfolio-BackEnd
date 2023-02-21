@@ -12,4 +12,5 @@ public interface ISkillService {
     public Skill findSkill(Integer id);
     public List<Skill> findByPersonaId(Long personaId);
     public Skill getOne(int id);
+    public void edit(Skill ski);
 }

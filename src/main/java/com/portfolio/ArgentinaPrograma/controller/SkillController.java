@@ -53,6 +53,11 @@ public class SkillController {
         interSkill.saveSkill(ski);
     }
     
+     @PutMapping("/update")
+    public void edit(@RequestBody Skill habi) {
+        interSkill.edit(habi);
+    }
+    
     //borrar habilidad por id
     @DeleteMapping("/borrar/{id}")
     public void delete(@PathVariable ("id") Integer id){

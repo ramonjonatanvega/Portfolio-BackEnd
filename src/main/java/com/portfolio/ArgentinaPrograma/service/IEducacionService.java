@@ -12,5 +12,6 @@ public interface IEducacionService {
     public void delete(Integer id);
     public Educacion findEducacion(Integer id);
     public List<Educacion> findByPersonaId(Long personaId);
+    public void edit(Educacion edu);
     
 }

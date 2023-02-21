@@ -55,6 +55,12 @@ public class ExperienciaController {
         interExp.saveExperiencia(exp);
     }
     
+     @PutMapping("/update")
+    public void edit(@RequestBody Experiencia expe) {      
+        interExp.edit(expe);
+    }
+    
+    
     //borrar experiencia por id
     @DeleteMapping("/borrar/{id}")
     public void delete(@PathVariable ("id") Integer id){
@@ -63,7 +69,7 @@ public class ExperienciaController {
     
     //editar experiencia por id
      @PutMapping("/editar/{id}")
-    public Experiencia editExperiencia(@PathVariable Integer id,
+    public  Experiencia editExperiencia(@PathVariable Integer id,
                                        @RequestParam("nombreEmpresa") String nuevaNombreEmpresa,
                                        @RequestParam("logoEmpresa") String nuevoLogoEmpresa,
                                        @RequestParam("puesto") String nuevoPuesto,
@@ -85,5 +91,26 @@ public class ExperienciaController {
     }
     
       
+     @PutMapping("/edit/{id}")
+    public ResponseEntity<?> updateExp(@PathVariable("id") int id, @RequestBody Experiencia experiencia) {
+        try {
+
+            Experiencia exper = interExp.gettwo(id).get();
+            experiencia.setNombreEmpresa(experiencia.getNombreEmpresa());
+            experiencia.setLogoEmpresa(experiencia.getLogoEmpresa());
+            experiencia.setPuesto(experiencia.getPuesto());
+            experiencia.setDescripcion(experiencia.getDescripcion());
+            experiencia.setFechaInicio(experiencia.getFechaInicio());
+            experiencia.setFechaFin(experiencia.getFechaFin());
+            experiencia.setEsTrabajoActual(experiencia.isEsTrabajoActual());
+
+            interExp.saveExperiencia(experiencia);
+
+            return new ResponseEntity<Experiencia>(HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity<Experiencia>(HttpStatus.NOT_FOUND);
+        }
+    }
     
 }
